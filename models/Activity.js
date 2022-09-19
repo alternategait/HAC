@@ -17,6 +17,10 @@ const ActivitySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    updateActDescription: {
+        type: String,
+        required: false,
+    },
     assistanceLevel:{
         type: [String],
         required: false,
@@ -29,6 +33,10 @@ const ActivitySchema = new mongoose.Schema({
         type: [String],
         required: false,
     }, 
+    original: {
+        type: Boolean,
+        required: true,
+    },
 
 });
 
