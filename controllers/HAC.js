@@ -14,7 +14,10 @@ module.exports = {
     },
     getHAC: async (req, res)=>{
         try{
-            
+            const hac = await HAC.find({ hac: req.hac.id})
+            res.render("HAC.ejs")
+        }catch (err) {
+        console.log(err);
         }
     },
 
