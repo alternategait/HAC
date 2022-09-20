@@ -30,6 +30,18 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
+                    <div class="mb-3">
+                      <label for="userCredentials" class="form-label">I am a </label>
+                      <select name = "userCredentials" id="userCredentials">
+                        <option value="pt">Physical Therapist</option>
+                        <option value="ot">Occupational Therapist</option>
+                        <option value="pta">Physical Therapist's Assistant</option>
+                        <option value="cota">Certified Occupational Therapy Assistant</option>
+                        <option value="slp">Speech and Language Pathologist</option>
+                        <option value="nursing">Nursing</option>
+                      </select>
+                    </div>
+                    <div>  <input class="hidden" type="boolean" name="licenseConfirmation" value=false> </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </section>
