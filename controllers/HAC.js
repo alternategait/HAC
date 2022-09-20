@@ -14,8 +14,17 @@ module.exports = {
     },
     getHAC: async (req, res)=>{
         try{
-            const hac = await HAC.find({ hac: req.hac.id})
+            const hac = await HAC.find({ hac: req.hac.hacid})
             res.render("HAC.ejs")
+        }catch (err) {
+        console.log(err);
+        }
+    },
+
+    getMyHAC: async (req, res)=>{
+        try{
+            const user = await User.find({ user: req.user.userid})
+            res.render("collection.ejs")
         }catch (err) {
         console.log(err);
         }
