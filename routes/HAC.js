@@ -14,7 +14,7 @@ router.get("/myHac/:userid", ensureAuth, HACController.getMyHAC);
 
 router.get("/previewAct/:actid", HACController.getAct);
 
-router.put("/editAct/:actid", HACController.editAct);
+// router.put("/editAct/:actid", HACController.editAct); for further refactoring, not MVC
 
 router.put("editHac/ :hacid", HACController.putHAC);
 
