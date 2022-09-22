@@ -1,0 +1,72 @@
+<%- include('partials/header') -%>
+    <main class="container">
+        <div class="row justify-content-center">
+            <section class="col-6 mt-5">
+                <!-- <% if (locals.messages.errors) { %>
+                    <% messages.errors.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+                <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el => { %>
+                        <div class="alert alert-info"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %> -->
+                <form action="/createAct" method="POST">
+                    <div >
+                        <label for="activityName"> Activity name</label>
+                        <input type = "text" id = "activityName" name ="activityName">
+                    </div>
+                    <div>
+                        <label for="imgUpload" class="form-label">Image</label>
+                        <input type="file" id="imageUpload" name="file">
+                    </div>
+                    <div>
+                        <label for "actDescription">Activity Description</label>
+                        <input type ="text" id="actDescrition" name="actDescription"
+                    </div>
+                    <div>
+                        <label for="assistanceLevel">Assistance Level</label>
+                        <input type="checkbox" name="assistanceLevel[]" value="supervision"> Supervision </input>
+                        <input type="checkbox" name="assistanceLevel[]" value="cga"> Contact Guard Assistance </input>
+                        <input type="checkbox" name="assistanceLevel[]" value="min"> Minimum Assistance </input>
+                        <input type="checkbox" name="assistanceLevel[]" value="mod"> Moderate Assistance </input>
+                        <input type="checkbox" name="assistanceLevel[]" value="max"> Maximum Assistance </input>
+                        <input type="checkbox" name="assistanceLevel[]" value="total"> Total Assistance </input>
+                        <input type="checkbox" name="assistanceLevel[]" value="dependent"> Dependent </input>
+                    </div>
+                    <div>
+                        <label for="actType">Activity Type</label>
+                        <input type="checkbox" name="actType[]" value="bed"> Bed Mobility </input>
+                        <input type="checkbox" name="actType[]" value="transfer"> Transfers </input>
+                        <input type="checkbox" name="actType[]" value="gait"> Gait </input>
+                        <input type="checkbox" name="actType[]" value="selfCare"> Self Care </input>
+                        <input type="checkbox" name="actType[]" value="dressing"> Dressing </input>
+                        <input type="checkbox" name="actType[]" value="hygine"> Hygine </input>
+                        <input type="checkbox" name="actType[]" value="toilet"> Toilet </input>
+                        <input type="checkbox" name="actType[]" value="medManage"> Medication Management </input>
+                        <input type="checkbox" name="actType[]" value="eat"> Eating and Feeding </input>
+                        <input type="checkbox" name="actType[]" value="mealPrep"> Meal Preparation </input>
+                    </div>
+                    <div>
+                        <label for="actType">Activity Type</label>
+                        <input type="checkbox" name="patientType[]" value="stroke"> Stroke </input>
+                        <input type="checkbox" name="patientType[]" value="lenwb"> LE Non-weight Bearing</input>
+                        <input type="checkbox" name="patientType[]" value="uenwb"> UE Non-weight Bearing </input>
+                        <input type="checkbox" name="patientType[]" value="cardiac"> Cardiac Precautions</input>
+                        <input type="checkbox" name="patientType[]" value="hipreplace"> Hip Replacement </input>
+                        <input type="checkbox" name="patientType[]" value="sternal"> Sternal Precautions </input>
+                        <input type="checkbox" name="patientType[]" value="spinal"> Spinal Precautions </input>
+                        <input type="checkbox" name="patientType[]" value="leamp"> LE Amputee </input>
+                        <input type="checkbox" name="patientType[]" value="ueamp"> UE Amputee </input>
+                    </div>
+                    <div><input hidden type="boolean" name="original" value=true> </div>
+                    <button type="submit" class="btn btn-primary">Submit</button></form>
+                </form>
+
+
+            </section>
+        </div>
+    </main>
+
+<%- include('partials/footer') -%>
