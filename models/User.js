@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   userCredentials: String,
   licenseConfirmation: Boolean,
 });
-
+ 
 // Password hash middleware.
 
 UserSchema.pre("save", function save(next) {
