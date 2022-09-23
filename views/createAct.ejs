@@ -12,7 +12,7 @@
                         <div class="alert alert-info"><%= el.msg %></div>
                     <% }) %>    
                 <% } %> -->
-                <form action="/createAct" method="POST">
+                <form action="/hac/createAct" method="POST" enctype="multipart/form-data">
                     <div >
                         <label for="activityName"> Activity name</label>
                         <input type = "text" id = "activityName" name ="activityName">
@@ -23,7 +23,7 @@
                     </div>
                     <div>
                         <label for "actDescription">Activity Description</label>
-                        <input type ="text" id="actDescrition" name="actDescription"
+                        <input type ="text" id="actDescription" name="actDescription"
                     </div>
                     <div>
                         <label for="assistanceLevel">Assistance Level</label>
@@ -49,7 +49,7 @@
                         <input type="checkbox" name="actType[]" value="mealPrep"> Meal Preparation </input>
                     </div>
                     <div>
-                        <label for="actType">Activity Type</label>
+                        <label for="actType">Patient Type</label>
                         <input type="checkbox" name="patientType[]" value="stroke"> Stroke </input>
                         <input type="checkbox" name="patientType[]" value="lenwb"> LE Non-weight Bearing</input>
                         <input type="checkbox" name="patientType[]" value="uenwb"> UE Non-weight Bearing </input>

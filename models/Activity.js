@@ -7,11 +7,11 @@ const ActivitySchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        require: true,
+        require: false,
     },
     cloudinaryId: {
         type: String,
-        require: true,
+        require: false,
     },
     actDescription: {
         type: String,

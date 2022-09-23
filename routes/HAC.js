@@ -10,6 +10,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
     router.get("/createAct", ensureAuth, hacController.getCreateAct);
 
+    router.post("/createAct", hacController.createAct);
+
 // router.get("/:hacid", ensureAuth, hacController.getHAC);
 
 // router.get("/myHac/:userid", ensureAuth, hacController.getMyHAC);

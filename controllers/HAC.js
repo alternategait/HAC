@@ -50,21 +50,24 @@ module.exports = {
         console.log(err);
     }
     },
-    createPost: async (req, res) => {
+    createAct: async (req, res) => {
         try {
       // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path);
+            // const result = await cloudinary.uploader.upload(req.file.path);
 
-        await Post.create({
-            title: req.body.title,
-            image: result.secure_url,
-            cloudinaryId: result.public_id,
-            caption: req.body.caption,
-            likes: 0,
-            user: req.user.id,
+        await Activity.create({
+            activityName: req.body.activityName,
+            // image: result.secure_url,
+            // cloudinaryId: result.public_id,
+            actDescription: req.body.actDescription,
+            updateActDescription: " ",
+            assistanceLevel: req.body.assistanceLevel,
+            actType: req.body.actType,
+            patientType: req.body.patientType,
+            original: true,
         });
         console.log("Post has been added!");
-        res.redirect("/profile");
+        res.redirect("hac/createAct");
         } catch (err) {
             console.log(err);
     }
