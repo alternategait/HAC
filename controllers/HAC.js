@@ -30,6 +30,10 @@ module.exports = {
         }
     },
 
+    getCreateAct: (req, res) =>{
+        res.render("createAct.ejs");
+    },
+
     getFeed: async (req, res) => {
         try {
         const posts = await Post.find().sort({ createdAt: "desc" }).lean();
