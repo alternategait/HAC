@@ -50,15 +50,15 @@ module.exports = {
         console.log(err);
     }
     },
-    createAct: async (req, res) => {
+    postCreateAct: async (req, res) => {
         try {
       // Upload image to cloudinary
-            // const result = await cloudinary.uploader.upload(req.file.path);
+            const result = await cloudinary.uploader.upload(req.file.path);
 
         await Activity.create({
             activityName: req.body.activityName,
-            // image: result.secure_url,
-            // cloudinaryId: result.public_id,
+            image: result.secure_url,
+            cloudinaryId: result.public_id,
             actDescription: req.body.actDescription,
             updateActDescription: " ",
             assistanceLevel: req.body.assistanceLevel,
@@ -67,7 +67,7 @@ module.exports = {
             original: true,
         });
         console.log("Post has been added!");
-        res.redirect("hac/createAct");
+        res.redirect("./createAct");
         } catch (err) {
             console.log(err);
     }
