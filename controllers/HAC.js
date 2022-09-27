@@ -37,7 +37,7 @@ module.exports = {
     getActivities: async (req, res) => {
         try {
         const activities = await Activity.find().lean();
-        res.render("feed.ejs", { activities: activities });
+        res.render("activities.ejs", { activities: activities });
     } catch (err) {
         console.log(err);
     }

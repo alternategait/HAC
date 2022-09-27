@@ -1,0 +1,62 @@
+<%- include('partials/header') -%>
+<!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky col-2">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+        >
+          <span>Bed Mobility</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Transfers</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Gait</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Self-care</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Dressing</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Hygine</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Toileting</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Medication Management</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Eating/Feeding</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <span>Meal Preparation</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+
+    <!-- activities go here -->
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<activities.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <!-- <a href="/activity/<%= activities[i]._id%>"> -->
+              <span> <%= activities[i].activityName %> </span><br></a>
+            <img class="img-fluid" src="<%= activities[i].image%>">
+            <p> <%= activities[i].actDescription%> </p>
+              
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
