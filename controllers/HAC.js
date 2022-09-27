@@ -50,7 +50,7 @@ module.exports = {
         console.log(err);
     }
     },
-    createAct: async (req, res) => {
+    postCreateAct: async (req, res) => {
         try {
       // Upload image to cloudinary
             // const result = await cloudinary.uploader.upload(req.file.path);
