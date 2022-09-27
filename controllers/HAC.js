@@ -53,12 +53,12 @@ module.exports = {
     postCreateAct: async (req, res) => {
         try {
       // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path);
+            // const result = await cloudinary.uploader.upload(req.file.path);
 
         await Activity.create({
             activityName: req.body.activityName,
-            image: result.secure_url,
-            cloudinaryId: result.public_id,
+            image: " ",
+            cloudinaryId: " ",
             actDescription: req.body.actDescription,
             updateActDescription: " ",
             assistanceLevel: req.body.assistanceLevel,
