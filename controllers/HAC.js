@@ -34,14 +34,15 @@ module.exports = {
         res.render("createAct.ejs");
     },
 
-    getFeed: async (req, res) => {
+    getActivities: async (req, res) => {
         try {
-        const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-        res.render("feed.ejs", { posts: posts });
+        const activities = await Activity.find().lean();
+        res.render("feed.ejs", { activities: activities });
     } catch (err) {
         console.log(err);
     }
     },
+
     getPost: async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
