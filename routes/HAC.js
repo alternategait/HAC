@@ -16,6 +16,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
     router.get("/bedmob", hacController.getBedMob);
 
+
     router.get("/transfer", hacController.getTransfer);
 
     router.get("/gait", hacController.getGait);
@@ -33,6 +34,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
     router.get("/eat", hacController.getEat);
 
     router.get("/meals", hacController.getMealPrep);
+
 // router.get("/:hacid", ensureAuth, hacController.getHAC);
 
 // router.get("/myHac/:userid", ensureAuth, hacController.getMyHAC);

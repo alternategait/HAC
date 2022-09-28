@@ -52,6 +52,7 @@ module.exports = {
     }
     },
 
+
     getGait: async (req, res) => {
         try {
         const activities = await Activity.find({ actType: { $in: [ "gait" ] } } ).lean();
@@ -132,6 +133,7 @@ module.exports = {
         console.log(err);
     }
     },
+
 
 
     getPost: async (req, res) => {
