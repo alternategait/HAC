@@ -43,6 +43,15 @@ module.exports = {
     }
     },
 
+    getBedMob: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "bed" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
     getPost: async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
