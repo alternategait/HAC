@@ -52,6 +52,90 @@ module.exports = {
     }
     },
 
+
+    getGait: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "gait" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getTransfer: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "transfer" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getSelfCare: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "selfCare" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getDressing: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "dressing" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getHygine: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "hygine" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getToileting: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "toilet" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getMed: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "medManage" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getEat: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "eat" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+    getMealPrep: async (req, res) => {
+        try {
+        const activities = await Activity.find({ actType: { $in: [ "mealPrep" ] } } ).lean();
+        res.render("activities.ejs", { activities: activities });
+    } catch (err) {
+        console.log(err);
+    }
+    },
+
+
+
     getPost: async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
