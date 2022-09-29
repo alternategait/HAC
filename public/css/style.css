@@ -1,3 +1,12 @@
 body {
-    margin: 1%;
+    margin: 2%;
+}
+
+.bg-image-index{
+    background-image: url("../imgs/womanHelpMancCane.png");
+    height: 85vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 }
