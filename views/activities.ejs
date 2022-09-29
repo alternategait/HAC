@@ -64,7 +64,7 @@
         <ul class="row list-unstyled">
           <% for(var i=0; i<activities.length; i++) {%>
             <li class="col-6 justify-content-between mt-5">
-              <!-- <a href="/activity/<%= activities[i]._id%>"> -->
+              <a href="/hac/previewAct/<%= activities[i]._id%>">
                 <span> <%= activities[i].activityName %> </span><br></a>
               <img class="img-fluid" src="<%= activities[i].image%>">
               <p> <%= activities[i].actDescription%> </p>

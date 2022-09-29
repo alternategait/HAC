@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const User = require("../models/User");
 const Activity = require("../models/Activity");
+const { image } = require("../middleware/cloudinary");
 module.exports = {
     getProfile: async (req, res) => {
         try {
@@ -136,10 +137,10 @@ module.exports = {
 
 
 
-    getPost: async (req, res) => {
+    getAct: async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
-        res.render("post.ejs", { post: post, user: req.user });
+        const activity = await Activity.findById(req.params.id);
+        res.render("post.ejs", { activity: activity,});
     } catch (err) {
         console.log(err);
     }
