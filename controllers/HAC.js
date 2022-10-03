@@ -139,7 +139,7 @@ module.exports = {
 
     getAct: async (req, res) => {
     try {
-        const activity = await Activity.findById(req.params.id);
+        const activity = await Activity.findById(req.params.actid);
         res.render("post.ejs", { activity: activity,});
     } catch (err) {
         console.log(err);

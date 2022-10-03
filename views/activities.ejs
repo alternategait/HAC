@@ -60,19 +60,23 @@
     <div id="page-content-wrapper">
 
       <!-- activities go here -->
-      <div class="container-fluid">
-        <ul class="row list-unstyled">
-          <% for(var i=0; i<activities.length; i++) {%>
-            <li class="col-6 justify-content-between mt-5">
-              <a href="/hac/previewAct/<%= activities[i]._id%>">
-                <span> <%= activities[i].activityName %> </span><br></a>
-              <img class="img-fluid" src="<%= activities[i].image%>">
-              <p> <%= activities[i].actDescription%> </p>
-                
-            </li>
-          <% } %>
-          </ul>
-      </div>
-    </div>  
-  </div>
+
+        <ul class="row list-unstyled" >
+          <div class="col-md">
+            <% for(var i=0; i<activities.length; i++) {%>
+              <li class="card" style"width: 18rem;">
+                <img class="card-img-top" src="<%= activities[i].image%>">
+                <div class = "card-body">
+                  <a href="/hac/previewAct/<%= activities[i]._id%>">
+                    <span> <%= activities[i].activityName %> </span><br></a>
+                  <p> <%= activities[i].actDescription%> </p>
+                </div>
+                  
+              </li>
+            <% } %>
+          </div>
+        </ul>
+    </div>
+  </div>  
+
 <%- include('partials/footer') -%>

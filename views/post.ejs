@@ -1,13 +1,5 @@
 <%- include('partials/header') -%>
 
-    getAct: async (req, res) => {
-    try {
-        const post = await Activity.findById(req.params.id);
-        res.render("post.ejs", { activity: activity, image: image, description: actDescription });
-    } catch (err) {
-        console.log(err);
-    }
-    },
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
