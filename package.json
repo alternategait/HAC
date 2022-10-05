@@ -5,13 +5,12 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tailwind build public/css/tailwind/style.css -o public/css/style.css"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "bootstrap": "^5.2.2",
     "cloudinary": "^1.32.0",
     "cloudinary-core": "^2.13.0",
     "connect-mongo": "^3.2.0",
@@ -29,5 +28,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
   }
 }
