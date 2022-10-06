@@ -88,11 +88,11 @@
             <div class="flex mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap">
             <% for(var i=0; i<activities.length; i++) {%>
 
-                  <li class = "w-full">
-                    <div class="flex flex-col items-start rounded-xl bg-white p-4 shadow-lg">
+                  <li class="flex">
+                    <div class="flex flex-col grow items-start rounded-xl bg-white p-4 shadow-lg w-full">
                       <img src="<%= activities[i].image%>">
                       <a href="/hac/previewAct/<%= activities[i]._id%>">
-                        <span class="mx-1"> <%= activities[i].activityName %> </span>
+                        <span class="mx-1 w-full"> <%= activities[i].activityName %> </span>
                       </a><br>
                       <p> <%= activities[i].actDescription%> </p>
                     </div>
