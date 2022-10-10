@@ -90,7 +90,13 @@
 
                   <li class="flex">
                     <div class="flex flex-col grow items-start rounded-xl bg-white p-4 shadow-lg w-full">
-                      <img src="<%= activities[i].image%>">
+
+
+                      <% if (activities[i].image !== " ") { %>
+                        <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" src="<%= activities[i].image%>" >
+                          <% } else { %>
+                            <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png">
+                      <% } %>
                       <a href="/hac/previewAct/<%= activities[i]._id%>">
                         <span class="mx-1 w-full"> <%= activities[i].activityName %> </span>
                       </a><br>
