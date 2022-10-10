@@ -28,6 +28,9 @@ Breaking and fixing is the best teacher. I have been in the muck on every part o
 - add ability for licensed professionals to add/create activities
 - improve connection to cloudinary. 
 
+<img width="471" alt="HAC wireframe flow chart" src="https://user-images.githubusercontent.com/102367926/194947929-540abd75-efd6-4e7e-935a-80efe84525e5.png">
+
+
 
 ## Install
 
