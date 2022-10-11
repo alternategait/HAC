@@ -1,51 +1,100 @@
 <%- include('partials/header') -%>
-    <main class="container">
-        <div class="row justify-content-center">
-            <section class="col-6 mt-5">
-                <% if (locals.messages.errors) { %>
-                    <% messages.errors.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-                <% if (locals.messages.info) { %>
-                    <% messages.info.forEach( el => { %>
-                        <div class="alert alert-info"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-                <form action="/signup" method="POST">
-                    <div class="mb-3">
-                        <label for="userName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="userName" name="userName">
-                      </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                      </div>
-                    <div class="mb-3">
-                      <label for="userCredentials" class="form-label">I am a </label>
-                      <select name = "userCredentials" id="userCredentials">
-                        <option value="pt">Physical Therapist</option>
-                        <option value="ot">Occupational Therapist</option>
-                        <option value="pta">Physical Therapist's Assistant</option>
-                        <option value="cota">Certified Occupational Therapy Assistant</option>
-                        <option value="slp">Speech and Language Pathologist</option>
-                        <option value="nursing">Nursing</option>
-                      </select>
-                    </div>
-                    <div>  <input class="hidden" type="boolean" name="licenseConfirmation" value=false> </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </section>
-        </div>
-    </main>
+    <main class="container mt-5">
+      <div class="">
+        <section class="mx-auto">
+          <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+              <div class="text-red-600"><%= el.msg %></div>
+              <% }) %>    
+          <% } %>
+          <% if (locals.messages.info) { %>
+            <% messages.info.forEach( el => { %>
+              <div class="text-red-600"><%= el.msg %></div>
+            <% }) %>    
+          <% } %>
+          <table class = "table-auto mx-auto">
+            <form action="/signup" method="POST">
+              <tbody class="divide-y-2">
+                <tr>
+                  <td>
+                    <label for="userName" class="">User Name</label>
+                  </td>
+                  <td>
+                    <input 
+                      type="text"                         
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                      id="userName" 
+                      name="userName"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="exampleInputEmail1" class="">Email address</label>
+                  </td>
+                  <td>
+                  <input 
+                    type="email" 
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                    id="exampleInputEmail1" 
+                    aria-describedby="emailHelp" 
+                    name="email">
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><div id="emailHelp" class="form-text">We'll never share your email with anyone else</div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="password" class="">Password</label>
+                  </td>
+                  <td>
+                    <input 
+                      type="password" 
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                      id="password" 
+                      name="password">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="confirmPassword" class="">Confirm Password</label>
+                  </td>
+                  <td>
+                    <input 
+                      type="password" 
+                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                      id="confirmPassword" 
+                      name="confirmPassword">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="userCredentials" class="">I am a </label>
+                  </td>
+                  <td>
+                    <select name = "userCredentials" id="userCredentials" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dropdown-toggle" ><i class="fa fa-caret-down" aria-hidden="true"></i>
+                      <option value="pt">Physical Therapist</option> 
+                      <option value="ot">Occupational Therapist</option>
+                      <option value="pta">Physical Therapist's Assistant</option>
+                      <option value="cota">Certified Occupational Therapy Assistant</option>
+                      <option value="slp">Speech and Language Pathologist</option>
+                      <option value="nursing">Nursing</option>
+                  </td>
+                </tr>
+                <div>  <input class="hidden" type="boolean" name="licenseConfirmation" value=false> </div>
+                <tr>
+                  <td></td>
+                  <td>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-auto">Submit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </form>
+          </table>
+        </section>
+      </div>
+  </main>
 
 <%- include('partials/footer') -%>
