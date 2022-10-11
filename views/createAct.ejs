@@ -1,78 +1,71 @@
 <%- include('partials/header') -%>
-    <main class="container">
-        <div class="row justify-content-center">
-            <section class="col-6 mt-5">
-                <!-- <% if (locals.messages.errors) { %>
-                    <% messages.errors.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
-                <% if (locals.messages.info) { %>
-                    <% messages.info.forEach( el => { %>
-                        <div class="alert alert-info"><%= el.msg %></div>
-                    <% }) %>    
-                    <% } %> -->
-                <table class = "table table-sm">
-                    <form action="/hac/createAct" method="POST" enctype="multipart/form-data">
-                        <tr>
-                            <td><label for="activityName"> Activity name</label></td>
-                            <td><input type = "text" id = "activityName" name ="activityName"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="imgUpload" class="form-label">Image</label></td>
-                            <td><input type="file" id="imageUpload" name="file"></td>
-                        </tr>
-                        <tr>
-                            <td><label for "actDescription">Activity Description</label></td>
-                            <td><input type ="text" id="actDescription" name="actDescription"></td>
-                        </tr>
-                        <tr>
-                                <td><label for="assistanceLevel">Assistance Level</label></td>
+    <main class="container mt-5">
+            <div class="w-full ml-5">
+                <table class = "table-auto mx-auto">
+                    <form action="/hac/createAct" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
+                        <tbody class="divide-y-2">
+                            <tr>
+                                <td><label for="activityName"> Activity name</label></td>
+                                <td><input type = "text" id = "activityName" name ="activityName" class = "appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="imgUpload" class="form-label">Image</label></td>
+                                <td><input type="file" id="imageUpload" name="file"></td>
+                            </tr>
+                            <tr>
+                                <td><label for "actDescription">Activity Description</label></td>
+                                <td><textarea rows="5" cols="50" type ="text" id="actDescription" name="actDescription" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded mt-3 mb-3 leading-tight focus:outline-none focus:bg-white"></textarea></td>
+                            </tr>
+                            <tr>
+                                    <td><label for="assistanceLevel">Assistance Level</label></td>
+                                    <td>
+                                        <input type="checkbox" name="assistanceLevel[]" value="supervision"> Supervision </input><br>
+                                        <input type="checkbox" name="assistanceLevel[]" value="cga"> Contact Guard Assistance </input><br>
+                                        <input type="checkbox" name="assistanceLevel[]" value="min"> Minimum Assistance </input><br>
+                                        <input type="checkbox" name="assistanceLevel[]" value="mod"> Moderate Assistance </input><br>
+                                        <input type="checkbox" name="assistanceLevel[]" value="max"> Maximum Assistance </input><br>
+                                        <input type="checkbox" name="assistanceLevel[]" value="total"> Total Assistance </input><br>
+                                        <input type="checkbox" name="assistanceLevel[]" value="dependent"> Dependent </input>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td><label for="actType">Activity Type</label></td>
                                 <td>
-                                    <input type="checkbox" name="assistanceLevel[]" value="supervision"> Supervision </input><br>
-                                    <input type="checkbox" name="assistanceLevel[]" value="cga"> Contact Guard Assistance </input><br>
-                                    <input type="checkbox" name="assistanceLevel[]" value="min"> Minimum Assistance </input><br>
-                                    <input type="checkbox" name="assistanceLevel[]" value="mod"> Moderate Assistance </input><br>
-                                    <input type="checkbox" name="assistanceLevel[]" value="max"> Maximum Assistance </input><br>
-                                    <input type="checkbox" name="assistanceLevel[]" value="total"> Total Assistance </input><br>
-                                    <input type="checkbox" name="assistanceLevel[]" value="dependent"> Dependent </input>
+                                    <input type="checkbox" name="actType[]" value="bed"> Bed Mobility </input><br>
+                                    <input type="checkbox" name="actType[]" value="transfer"> Transfers </input><br>
+                                    <input type="checkbox" name="actType[]" value="gait"> Gait </input><br>
+                                    <input type="checkbox" name="actType[]" value="selfCare"> Self Care </input><br>
+                                    <input type="checkbox" name="actType[]" value="dressing"> Dressing </input><br>
+                                    <input type="checkbox" name="actType[]" value="hygine"> Hygiene </input><br>
+                                    <input type="checkbox" name="actType[]" value="toilet"> Toilet </input><br>
+                                    <input type="checkbox" name="actType[]" value="medManage"> Medication Management </input><br>
+                                    <input type="checkbox" name="actType[]" value="eat"> Eating and Feeding </input><br>
+                                    <input type="checkbox" name="actType[]" value="mealPrep"> Meal Preparation </input><br>
                                 </td>
-                        </tr>
-                        <tr>
-                            <td><label for="actType">Activity Type</label></td>
-                            <td>
-                                <input type="checkbox" name="actType[]" value="bed"> Bed Mobility </input><br>
-                                <input type="checkbox" name="actType[]" value="transfer"> Transfers </input><br>
-                                <input type="checkbox" name="actType[]" value="gait"> Gait </input><br>
-                                <input type="checkbox" name="actType[]" value="selfCare"> Self Care </input><br>
-                                <input type="checkbox" name="actType[]" value="dressing"> Dressing </input><br>
-                                <input type="checkbox" name="actType[]" value="hygine"> Hygiene </input><br>
-                                <input type="checkbox" name="actType[]" value="toilet"> Toilet </input><br>
-                                <input type="checkbox" name="actType[]" value="medManage"> Medication Management </input><br>
-                                <input type="checkbox" name="actType[]" value="eat"> Eating and Feeding </input><br>
-                                <input type="checkbox" name="actType[]" value="mealPrep"> Meal Preparation </input><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="actType">Patient Type</label></td>
-                            <td>
-                                <input type="checkbox" name="patientType[]" value="stroke"> Stroke </input> <br>
-                                <input type="checkbox" name="patientType[]" value="lenwb"> LE Non-weight Bearing</input><br>
-                                <input type="checkbox" name="patientType[]" value="uenwb"> UE Non-weight Bearing </input><br>
-                                <input type="checkbox" name="patientType[]" value="cardiac"> Cardiac Precautions</input><br>
-                                <input type="checkbox" name="patientType[]" value="hipreplace"> Hip Replacement </input><br>
-                                <input type="checkbox" name="patientType[]" value="sternal"> Sternal Precautions </input><br>
-                                <input type="checkbox" name="patientType[]" value="spinal"> Spinal Precautions </input><br>
-                                <input type="checkbox" name="patientType[]" value="leamp"> LE Amputee </input><br>
-                                <input type="checkbox" name="patientType[]" value="ueamp"> UE Amputee </input><br>
-                            </td>
-                        </tr>
-                        <div><input hidden type="boolean" name="original" value=true> </div>
-                        <tr><td><button type="submit" class="btn btn-primary">Submit</button></td></tr>
+                            </tr>
+                            <tr>
+                                <td><label for="actType">Patient Type</label></td>
+                                <td>
+                                    <input type="checkbox" name="patientType[]" value="stroke"> Stroke </input> <br>
+                                    <input type="checkbox" name="patientType[]" value="lenwb"> LE Non-weight Bearing</input><br>
+                                    <input type="checkbox" name="patientType[]" value="uenwb"> UE Non-weight Bearing </input><br>
+                                    <input type="checkbox" name="patientType[]" value="cardiac"> Cardiac Precautions</input><br>
+                                    <input type="checkbox" name="patientType[]" value="hipreplace"> Hip Replacement </input><br>
+                                    <input type="checkbox" name="patientType[]" value="sternal"> Sternal Precautions </input><br>
+                                    <input type="checkbox" name="patientType[]" value="spinal"> Spinal Precautions </input><br>
+                                    <input type="checkbox" name="patientType[]" value="leamp"> LE Amputee </input><br>
+                                    <input type="checkbox" name="patientType[]" value="ueamp"> UE Amputee </input><br>
+                                </td>
+                            </tr>
+                            <div><input hidden type="boolean" name="original" value=true> </div>
+                            <tr>
+                                <td></td>
+                                <td><button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-auto">Submit</button></td>
+                            </tr>
+                        </tbody>
                     </form>
                 </table>
 
-            </section>
         </div>
     </main>
 
