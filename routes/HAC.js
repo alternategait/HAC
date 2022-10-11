@@ -44,13 +44,10 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 // router.put("editHac/ :hacid", hacController.putHAC);
 
-// router.post("/createAct", upload.single("file"), hacController.createAct);
 
-// router.put("/likePost/:id", postsController.likePost);
 // router.delete("/deleteAct/:actid", hacController.deleteAct); 
 
 // router.delete("/deleteHac/:hacid", hacController.deleteHAC); 
 
-// router.delete("/deletePost/:id", postsController.deletePost);
 
 module.exports = router;
