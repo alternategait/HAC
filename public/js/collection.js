@@ -32,8 +32,13 @@ function doShowAll(){
 
 function saveItem() {
     var key = document.forms.activity.name.value;
-    var value = document.forms.activity.data.value;
-    sessionStorage.setItem(key, value);
+    var value = document.forms.activity.data.value;    
+    if(  sessionStorage.getItem(key) == null ){
+        sessionStorage.setItem(key, value);
+    } else { 
+        console.log("duplicate entry")
+    }
+    // sessionStorage.setItem(key, value);
 
 }
 
