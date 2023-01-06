@@ -1,4 +1,7 @@
-// document.getElementById("myBtn").addEventListener("click", displayDate);
+let path = window.location.pathname;
+
+if (path.includes("/storage")){ doShowAll()} ;
+
 document.getElementById("saveMe").addEventListener("click", saveItem);
 
 // to check browser support though may be redundant
@@ -10,20 +13,19 @@ function checkBrowser(){
 
 function doShowAll(){
     if (checkBrowser()){
-    //     let key = "";
-    //     let list = "<tr><th>Item</th><th>Value</th></tr>\n";
-    //     var i = 0;
-    //     for (i = 0; i<= sessionStorage.length-1; i++){
-    //         key = sessionStorage.key(i);
-    //         list += "<tr><td>" + key + "</td>\n<td>"
-    //             + sessionStorage.getItem(key) + "</td></tr>\n";
-    //     }
-    //     //If no item exists in the cart.
-    //     if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
-    //         list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
-    //     }        //Bind the data to HTML table.
-    //     //You can use jQuery, too.
-    //     document.getElementById('list').innerHTML = list;
+        let key = "";
+        let list = "<tr><th>Item</th></tr>\n";
+        // var i = 0;
+        for (i = 0; i<= sessionStorage.length-1; i++){
+            key = sessionStorage.key(i);
+            list += "<tr><td> <input value =' " + key + " 'type = 'text' name ='activities[]'></td></tr>";
+        }
+        //If no item exists in the cart.
+        if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
+            list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
+        }        //Bind the data to HTML table.
+        //You can use jQuery, too.
+        document.getElementById('list').innerHTML = list;
             console.log("success");
     } else{
         alert("Cannot save activity to collection as your browser does not support HTML 5 and session storage")

@@ -4,6 +4,13 @@ const User = require("../models/User");
 const Activity = require("../models/Activity");
 const { image } = require("../middleware/cloudinary");
 module.exports = {
+
+    getStorage: (req, res) => {
+        // var storage = req.body.sessionStorage;
+        // console.log(storage);
+        res.render("storage.ejs");
+    },
+
     getProfile: async (req, res) => {
         try {
         const posts = await User.find({ user: req.user.id });
