@@ -8,7 +8,8 @@ module.exports = {
     getStorage: (req, res) => {
         // var storage = req.body.sessionStorage;
         // console.log(storage);
-        res.render("storage.ejs");
+        // res.render("storage.ejs");
+        var actID = req.params.id
     },
 
     getProfile: async (req, res) => {

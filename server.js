@@ -45,8 +45,15 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: { maxAge : 360 * 60 * 1000},
   })
 );
+
+//session middleware
+app.use(function (req, res, next){
+  res.locals.session = req.session;
+  next();
+});
 
 // Passport middleware
 app.use(passport.initialize());
@@ -56,9 +63,10 @@ app.use(passport.session());
 app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
-app.use("/", mainRoutes);
+
 app.use("/post", postRoutes);
 app.use("/hac", hacRoutes);
+app.use("/", mainRoutes);
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on ${process.env.PORT}, you better catch it!`);
