@@ -7,7 +7,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
 // router.get("/", ensureAuth, homeController.getIndex);
-    router.get("/storage:id", hacController.getStorage);
+    router.get("/storage/:actid", hacController.getStorage);
 
     router.get("/createAct", ensureAuth, hacController.getCreateAct);
 

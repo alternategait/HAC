@@ -2,15 +2,34 @@ const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const User = require("../models/User");
 const Activity = require("../models/Activity");
+const Collection = require("../models/Collection");
 const { image } = require("../middleware/cloudinary");
 module.exports = {
 
-    getStorage: (req, res) => {
-        // var storage = req.body.sessionStorage;
-        // console.log(storage);
-        // res.render("storage.ejs");
-        var actID = req.params.id
-    },
+    // getAct: async (req, res) => {
+    // try {
+    //     const activity = await Activity.findById(req.params.actid);
+    //     res.render("post.ejs", { activity: activity,});
+    // } catch (err) {
+    //     console.log(err);
+    // }
+
+    getStorage:  (req, res) => {
+        try{
+            const actid = req.params.actid;
+            // const activity =  Activity.findById(actid).lean;
+            var collection = new Collection(req.session.collection ? req.session.collection : {});
+            Activity.findById(actid, function (err, activity){
+                if(err){console.log(err)}
+                    collection.add(activity, activity.actid);
+            })
+            req.session.collection = collection;
+            console.log(req.session.collection);
+            // res.redirect("/hac/activities");
+        }catch(err){
+            console.log(err)}
+
+        },
 
     getProfile: async (req, res) => {
         try {
