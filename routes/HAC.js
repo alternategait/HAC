@@ -25,7 +25,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
     router.get("/dressing", hacController.getDressing);
 
-    router.get("/hygine", hacController.getHygine);
+    router.get("/hygiene", hacController.gethygiene);
 
     router.get("/toilet", hacController.getToileting);
 

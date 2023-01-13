@@ -1,10 +1,13 @@
 module.exports = function Collection(allActivities){
     this.activities = allActivities.activities || {};
 
-    this.add = function(activity, actid){
-        var storedActivity = this.activities[actid];
-        if (!storedActivity){
-            storedActivity = this.activies[actid] = { activities: activity}}
+    this.add = function(activity){
+        // var storedActivity = this.activities[activity._id];
+        console.dir(this.activities)
+        if ( !(activity._id in this.activities) ){
+            this.activities[activity._id] =  activity
+                }
+        console.log(activity._id)
         }
 
 

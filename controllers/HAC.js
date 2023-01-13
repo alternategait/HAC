@@ -21,10 +21,10 @@ module.exports = {
             var collection = new Collection(req.session.collection ? req.session.collection : {});
             await Activity.findById(actid, function (err, activity){
                 if(err){console.log(err)}
-                    collection.add(activity, activity.actid);
+                    collection.add(activity);
             })
             req.session.collection = collection;
-            console.log(req.session.collection);
+            // console.log(req.session.collection);
             // res.redirect("/hac/activities");
         }catch(err){
             console.log(err)}
@@ -117,9 +117,9 @@ module.exports = {
     }
     },
 
-    getHygine: async (req, res) => {
+    gethygiene: async (req, res) => {
         try {
-        const activities = await Activity.find({ actType: { $in: [ "hygine" ] } } ).lean();
+        const activities = await Activity.find({ actType: { $in: [ "hygiene" ] } } ).lean();
         res.render("activities.ejs", { activities: activities });
     } catch (err) {
         console.log(err);
