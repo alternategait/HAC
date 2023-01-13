@@ -14,12 +14,12 @@ module.exports = {
     //     console.log(err);
     // }
 
-    getStorage:  (req, res) => {
+    getStorage: async (req, res) => {
         try{
             const actid = req.params.actid;
             // const activity =  Activity.findById(actid).lean;
             var collection = new Collection(req.session.collection ? req.session.collection : {});
-            Activity.findById(actid, function (err, activity){
+            await Activity.findById(actid, function (err, activity){
                 if(err){console.log(err)}
                     collection.add(activity, activity.actid);
             })
