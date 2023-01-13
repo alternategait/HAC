@@ -19,8 +19,8 @@ Breaking and fixing is the best teacher. I have been in the muck on every part o
 ### Optimization
 
 - better styling all around
-  - include graphics/background images for landing pages
-  - include icons as appropriate
+  - Xinclude graphics/background images for landing pages
+  - x include icons as appropriate
 - X log out buttons and log out path (completed 8/29, but needs better styling and a way to keep it from rendering on index)
 - improve selection to be dry-er for activites by type (can probably pass in variables from the DOM)
 - improve ability to make collections
