@@ -4,6 +4,7 @@ const User = require("../models/User");
 const Activity = require("../models/Activity");
 const Collection = require("../models/Collection");
 const { image } = require("../middleware/cloudinary");
+const session = require("express-session");
 module.exports = {
 
     // getAct: async (req, res) => {
@@ -17,6 +18,7 @@ module.exports = {
     getStorage: async (req, res) => {
         try{
             const actid = req.params.actid;
+                console.log(req.session.collection)
             // const activity =  Activity.findById(actid).lean;
             var collection = new Collection(req.session.collection ? req.session.collection : {});
             await Activity.findById(actid, function (err, activity){
@@ -24,7 +26,7 @@ module.exports = {
                     collection.add(activity);
             })
             req.session.collection = collection;
-            // console.log(req.session.collection);
+            console.log(collection);
             // res.redirect("/hac/activities");
         }catch(err){
             console.log(err)}
