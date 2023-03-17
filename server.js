@@ -20,7 +20,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database
-connectDB();
+// connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -67,7 +67,15 @@ app.use(flash());
 app.use("/post", postRoutes);
 app.use("/hac", hacRoutes);
 app.use("/", mainRoutes);
-//Server Running
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on ${process.env.PORT}, you better catch it!`);
+// //Server Running
+// app.listen(process.env.PORT, () => {
+//   console.log(`Server is running on ${process.env.PORT}, you better catch it!`);
+// });
+connectDB().then(() => {
+  //Server Running
+  app.listen(process.env.PORT, () => {
+    console.log(
+      `Server is running on ${process.env.PORT}, you better catch it!`
+    );
+  });
 });
