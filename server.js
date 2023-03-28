@@ -10,7 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
-const hacRoutes = require("./routes/hac");
+const hacRoutes = require("./routes/HAC");
 
 
 //Use .env file in config folder
