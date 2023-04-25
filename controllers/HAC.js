@@ -27,7 +27,7 @@ module.exports = {
             })
             req.session.collection = collection;
             console.log(collection);
-            res.redirect("/hac/activities");
+            res.redirect("/hac/collection");
         }catch(err){
             console.log(err)}
 
