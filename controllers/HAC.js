@@ -33,6 +33,17 @@ module.exports = {
 
         },
 
+    getCollection: async (req, res) => {
+        try{
+            const collection = new Collection(req.session.collection|| {});
+            let actArray = collection.generateArray();
+            console.log("Expect array", actArray);
+            res.render("collection.ejs", { activities: actArray })
+        }catch(err){
+            console.log(err);
+        }
+    },
+
     getProfile: async (req, res) => {
         try {
         const posts = await User.find({ user: req.user.id });
@@ -72,6 +83,7 @@ module.exports = {
         console.log(err);
     }
     },
+
 
     getBedMob: async (req, res) => {
         try {

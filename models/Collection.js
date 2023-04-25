@@ -37,7 +37,9 @@ class Collection {
         for (const actid in this.activities) {
         activitiesArr.push(this.activities[actid]);
         }
+        console.log(activitiesArr)
         return activitiesArr;
+
     }
 }
 
