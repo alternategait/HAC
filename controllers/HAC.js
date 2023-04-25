@@ -19,15 +19,15 @@ module.exports = {
         try{
             const actid = req.params.actid;
                 console.log(req.session.collection)
-            // const activity =  Activity.findById(actid).lean;
-            var collection = new Collection(req.session.collection ? req.session.collection : {});
+            // const activity =  Activity.findById(actid).lean();
+            const collection = new Collection(req.session.collection || {});
             await Activity.findById(actid, function (err, activity){
                 if(err){console.log(err)}
                     collection.add(activity);
             })
             req.session.collection = collection;
             console.log(collection);
-            // res.redirect("/hac/activities");
+            res.redirect("/hac/activities");
         }catch(err){
             console.log(err)}
 
