@@ -19,16 +19,18 @@
                             <div class="flex flex-col grow items-start rounded-xl bg-white p-4 shadow-lg w-full">
 
 
-                            <% if (activities[i].image !== " ") { %>
-                                <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" src="<%= activities[i].image%>" >
-                                <% } else { %>
-                                    <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png">
-                            <% } %>
-                            <a href="/hac/previewAct/<%= activities[i]._id%>">
-                                <span class="mx-1 w-full"> <%= activities[i].activityName %> </span>
-                            </a><br>
-                            <p> <%= activities[i].actDescription%> </p>
+                                <% if (activities[i].image !== " ") { %>
+                                    <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" src="<%= activities[i].image%>" >
+                                    <% } else { %>
+                                        <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png">
+                                <% } %>
+                                <a href="/hac/previewAct/<%= activities[i]._id%>">
+                                    <span class="mx-1 w-full"> <%= activities[i].activityName %> </span>
+                                </a><br>
+                                <p> <%= activities[i].actDescription%> </p>
+                                <a href="/hac/remove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-auto">Remove This Activity</a>
                             </div>
+
                         </li>
 
                     <% } %>
