@@ -18,12 +18,10 @@ module.exports = {
     getStorage: async (req, res) => {
         try{
             const actid = req.params.actid;
-                console.log(req.session.collection)
-            // const activity =  Activity.findById(actid).lean();
             const collection = new Collection(req.session.collection || {});
             await Activity.findById(actid, function (err, activity){
                 if(err){console.log(err)}
-                    collection.add(activity);
+                collection.add(activity);
             })
             req.session.collection = collection;
             console.log(collection);
@@ -37,10 +35,21 @@ module.exports = {
         try{
             const collection = new Collection(req.session.collection|| {});
             let actArray = collection.generateArray();
-            console.log("Expect array", actArray);
             res.render("collection.ejs", { activities: actArray })
         }catch(err){
             console.log(err);
+        }
+    },
+
+    getRemove: async(req, res) =>{
+        try{
+            const actid = req.params.actid;
+            const collection = new Collection(req.session.collection || {});
+            collection.remove(actid)
+            res.redirect("/hac/collection");
+        }catch(err){
+            console.error(err);
+            res.status(500).send("Internal Server Error");
         }
     },
 
@@ -53,6 +62,7 @@ module.exports = {
         console.log(err);
     }
     },
+
     getHAC: async (req, res)=>{
         try{
             const hac = await HAC.find({ hac: req.hac.hacid})
