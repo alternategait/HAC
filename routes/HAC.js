@@ -40,6 +40,9 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 // router.get("/myHac/:userid", ensureAuth, hacController.getMyHAC);
     router.get("/collection", hacController.getCollection);
 
+    router.get("/remove/:actid", hacController.getRemove);
+
+
     router.get("/previewAct/:actid", hacController.getAct);
 
 // router.put("/editAct/:actid", HACController.editAct); for further refactoring, not MVC
