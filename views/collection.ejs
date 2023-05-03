@@ -11,31 +11,30 @@
 
             <!-- activities go here -->
             <section>
-                <ul>
                     <div class="flex mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap">
                     <% for(var i=0; i<activities.length; i++) {%>
 
-                        <li class="flex">
+                        <div class="flex">
                             <div class="flex flex-col grow items-start rounded-xl bg-white p-4 shadow-lg w-full">
 
 
                                 <% if (activities[i].image !== " ") { %>
-                                    <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" src="<%= activities[i].image%>" >
+                                    <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" src="<%= activities[i].image%>" alt="<%= activities[i].activityName %>">
                                     <% } else { %>
-                                        <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png">
+                                        <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png" alt="empty gray square">
                                 <% } %>
                                 <a href="/hac/previewAct/<%= activities[i]._id%>">
-                                    <span class="mx-1 w-full"> <%= activities[i].activityName %> </span>
+                                    <h2 class="mx-1 w-full"> <%= activities[i].activityName %> </h2>
                                 </a><br>
                                 <p> <%= activities[i].actDescription%> </p>
                                 <a href="/hac/remove/<%= activities[i]._id%>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-auto">Remove This Activity</a>
                             </div>
 
-                        </li>
+                        </div>
 
                     <% } %>
 
-                </ul>
+
                 </div>
             </section>
         </main>

@@ -10,29 +10,29 @@
 
       <!-- activities go here -->
 
-          <ul>
-            <div class="flex mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap">
-            <% for(var i=0; i<activities.length; i++) {%>
+        <section>
+          <div class="flex mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-wrap">
+          <% for(var i=0; i<activities.length; i++) {%>
 
-                  <li class="flex">
-                    <div class="flex flex-col grow items-start rounded-xl bg-white p-4 shadow-lg w-full">
+                <div class="flex">
+                  <div class="flex flex-col grow items-start rounded-xl bg-white p-4 shadow-lg w-full">
 
 
-                      <% if (activities[i].image !== " ") { %>
-                        <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" src="<%= activities[i].image%>" >
-                          <% } else { %>
-                            <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png">
-                      <% } %>
-                      <a href="/hac/previewAct/<%= activities[i]._id%>">
-                        <span class="mx-1 w-full"> <%= activities[i].activityName %> </span>
-                      </a><br>
-                      <p> <%= activities[i].actDescription%> </p>
-                    </div>
-                  </li>
+                    <% if (activities[i].image !== " ") { %>
+                      <img class="flex h-40 w-40 object-center items-center justify-center mx-auto" alt="<%= activities[i].activityName %>" src="<%= activities[i].image%>" >
+                        <% } else { %>
+                          <img class="flex w-full object-center items-center justify-center mx-auto" src="/imgs/Square_gray.png" alt="empty gray square">
+                    <% } %>
+                    <a href="/hac/previewAct/<%= activities[i]._id%>">
+                      <h2 class="mx-1 w-full"> <%= activities[i].activityName %> </h2>
+                    </a><br>
+                    <p> <%= activities[i].actDescription%> </p>
+                  </div>
+                </div>
 
-            <% } %>
+          <% } %>
 
-          </ul>
+        </section>
         </div>
 
 
