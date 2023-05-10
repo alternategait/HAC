@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
-const Post = require("../models/Post");
+// const Post = require("../models/Post");
 const User = require("../models/User");
+const HAC = require("../models/HAC");
 const Activity = require("../models/Activity");
 const Collection = require("../models/Collection");
 const { image } = require("../middleware/cloudinary");
@@ -218,5 +219,32 @@ module.exports = {
             console.log(err);
     }
     },
+
+    getSave: async (req, res) =>
+        {
+        try{
+            const collection = new Collection(req.session.collection|| {});
+            let actArray = collection.generateArray();
+            res.render("dbcollection.ejs", { activities: actArray })
+        }catch(err){
+            console.log(err);
+        }
+        },
+
+    postSave: async (req, res) =>
+        {  
+            const collection = new Collection(req.session.collection|| {});
+            let actArray = collection.generateArray();
+            try{
+                await HAC.create({
+                    HacTitle: req.body.HacTitle,
+                    user: req.user.id,
+                    HacActivity: actArray,
+                });
+                console.log("HAC added");
+            }catch(err){
+                console.error(err)
+            }
+        },
 
 };

@@ -45,6 +45,10 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
     router.get("/previewAct/:actid", hacController.getAct);
 
+    router.get("/save", hacController.getSave);
+
+    router.post("/save", hacController.postSave);
+
 // router.put("/editAct/:actid", HACController.editAct); for further refactoring, not MVC
 
 // router.put("editHac/ :hacid", hacController.putHAC);

@@ -9,10 +9,14 @@ const HacSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
-    HacActivity: 
-        [{type: mongoose.Schema.Types.ObjectId,
-        ref: "Activity", }],
+    HacActivity: [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Activity", 
+        },
+    ],
+    });
 
-});
+const HAC = mongoose.model("Hac", HacSchema);
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = HAC;
